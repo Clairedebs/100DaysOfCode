@@ -4,7 +4,7 @@
 Chaque jour, je code **au minimum 1h** en Angular et Spring Boot.  
 Objectif : consolider mes bases et livrer un projet fullstack concret 💡.
 
-👉 Suivez aussi mon parcours sur [LinkedIn](#) et [X](#).
+👉 Suivez aussi mon parcours sur [LinkedIn](https://www.linkedin.com/in/claire-deborah-ngos-3b93a0310) et [X](https://x.com/clairedeborahN).
 
 ## ⚙️ Stack utilisée
 - **Frontend** : Angular 20, RxJS, Tailwind
