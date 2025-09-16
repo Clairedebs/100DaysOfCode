@@ -3,19 +3,19 @@
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="bg-white p-6 rounded-3xl shadow-md border border-gray-100">
             <div class="text-sm text-gray-500">Total Tasks</div>
-            <div class="text-3xl font-bold">4{{ tasks.length }}</div>
+            <div class="text-3xl font-bold">{{ tasks.length }}</div>
         </div>
         <div class="bg-white p-6 rounded-3xl shadow-md border border-gray-100">
             <div class="text-sm text-gray-500">Completed Tasks</div>
-            <div class="text-3xl font-bold">27</div>
+            <div class="text-3xl font-bold">{{ completedTasks.length }}</div>
         </div>
         <div class="bg-white p-6 rounded-3xl shadow-md border border-gray-100">
             <div class="text-sm text-gray-500">Pending Tasks</div>
-            <div class="text-3xl font-bold">10</div>
+            <div class="text-3xl font-bold">{{ pendingtasks.length }}</div>
         </div>
         <div class="bg-white p-6 rounded-3xl shadow-md border border-gray-100">
             <div class="text-sm text-gray-500">To do Tasks</div>
-            <div class="text-3xl font-bold">5</div>
+            <div class="text-3xl font-bold">{{ todoTasks.length }}</div>
         </div>
     </div>
 </div>

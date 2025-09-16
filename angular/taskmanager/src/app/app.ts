@@ -1,24 +1,37 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { Header } from './components/header/header';
 import { Addtask } from "./components/addtask/addtask";
 import { Stats } from './components/stats/stats';
 import { Taskcard } from './components/taskcard/taskcard';
 import { TasksService } from './service/tasks';
 import { Tasks } from './models/Tasks';
+import { ToastComponent } from './components/toast/toast.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Addtask, Stats, Taskcard],
+  imports: [CommonModule, RouterOutlet, Header, Addtask, Stats, Taskcard, ToastComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit {
   tasks: Tasks[] = [];
+  showAddTask = false;
   protected readonly title = signal('taskmanager');
-  constructor(private taskService: TasksService){
+  constructor(private taskService: TasksService){}
+
+  ngOnInit(): void {
     this.taskService.getTasks().subscribe((tasks: Tasks[])=>{
       this.tasks = tasks;
-    });
+    });  
+  }
+
+  openAddTask() {
+    this.showAddTask = true;
+  }
+
+  closeAddTask() {
+    this.showAddTask = false;
   }
 }

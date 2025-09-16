@@ -12,6 +12,8 @@ We will log our daily progress here:
 - **Day 1:** Development environment setup + initialized GitHub repo ✅  
 - **Day 2:** Built a basic Angular component and a simple Spring Boot REST API 
 - **Day 3:** Built an API REST for tasks management
+- **Day 4:** Start building the Anular UI 
+- **Day 5:** Review angular reatives forms
 
 👉 Follow my journey on [LinkedIn-Claire Deborah](https://www.linkedin.com/in/claire-deborah-ngos-3b93a0310) and [X](https://x.com/clairedeborahN).
 
