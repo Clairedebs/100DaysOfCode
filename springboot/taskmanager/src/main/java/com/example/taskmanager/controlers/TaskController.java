@@ -3,6 +3,7 @@ package com.example.taskmanager.controlers;
 import com.example.taskmanager.models.Tasks;
 import com.example.taskmanager.models.TasksDTO;
 import com.example.taskmanager.services.TaskService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +33,7 @@ public class TaskController {
     }
 
     @PostMapping
-    public ResponseEntity<String> save(@RequestBody TasksDTO task) {
+    public ResponseEntity<String> save(@Valid @RequestBody TasksDTO task) {
         taskService.addTask(task);
         return ResponseEntity.ok().body("Task has been added !");
     }
