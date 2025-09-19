@@ -14,7 +14,7 @@ We will log our daily progress here:
 - **Day 3:** Built an API REST for tasks management
 - **Day 4:** Start building the Anular UI 
 - **Day 5:** Review angular reatives forms
-
+- **Day 7:** Add input validation with Hibernate validators
 👉 Follow my journey on [LinkedIn-Claire Deborah](https://www.linkedin.com/in/claire-deborah-ngos-3b93a0310) and [X](https://x.com/clairedeborahN).
 
 ---

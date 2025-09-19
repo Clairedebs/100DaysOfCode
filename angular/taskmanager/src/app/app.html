@@ -4,7 +4,7 @@
   <app-header (addTask)="openAddTask()" />
   <app-stats />
   <div class="m-16 flex flex-col gap-6">
-    @for (task of tasks; track task.id) {
+    @for (task of tasks$ | async; track task.id) {
       <app-taskcard [task]="task" />
     }
   </div>

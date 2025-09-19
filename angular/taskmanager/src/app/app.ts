@@ -8,6 +8,7 @@ import { Taskcard } from './components/taskcard/taskcard';
 import { TasksService } from './service/tasks';
 import { Tasks } from './models/Tasks';
 import { ToastComponent } from './components/toast/toast.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -16,15 +17,15 @@ import { ToastComponent } from './components/toast/toast.component';
   styleUrl: './app.css'
 })
 export class App implements OnInit {
-  tasks: Tasks[] = [];
+  public tasks$! : Observable<Tasks[]>;
   showAddTask = false;
   protected readonly title = signal('taskmanager');
-  constructor(private taskService: TasksService){}
+  constructor(private taskService: TasksService){
+    this.tasks$ = this.taskService.getTasks();
+  }
 
   ngOnInit(): void {
-    this.taskService.getTasks().subscribe((tasks: Tasks[])=>{
-      this.tasks = tasks;
-    });  
+    this.tasks$ = this.taskService.getTasks(); 
   }
 
   openAddTask() {

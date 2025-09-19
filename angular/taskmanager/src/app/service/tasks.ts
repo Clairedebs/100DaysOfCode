@@ -32,7 +32,7 @@ export class TasksService {
     return this.http.patch<Tasks>(`${this.apiurl}/${id}`, task);
   }
 
-  deleteTask(id: number): Observable<void> {
+  deleteTask(id: number): Observable<any> {
     return this.http.delete<void>(`${this.apiurl}/${id}`);
   }
 
