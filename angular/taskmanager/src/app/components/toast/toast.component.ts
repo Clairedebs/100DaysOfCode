@@ -8,23 +8,31 @@ import { Toast, ToastService } from '../../service/toast';
   ],
   selector: 'app-toast',
   template: `
-    <div *ngIf="toast" class=" mx-auto w-96 z-50 justify-between rounded-2xl mt-2.5 p-4 fixed">
-        <div class="backdrop-blur-sm alert shadow-lg rounded-xl px-2 justify-between flex py-2 items-center"
+    <div *ngIf="toast" class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-md flex justify-center items-center animate-fade-in">
+      <div class="backdrop-blur-md shadow-2xl rounded-2xl px-6 py-4 flex items-center gap-4 border-2"
         [ngClass]="{
-               'bg-green-50': toast.type === 'success',
-               'bg-red-200': toast.type === 'error', 
-               'bg-blue-300': toast.type === 'info'
-             }"
-        >
-            <span 
-            [ngClass]="{
-                    'text-green-700': toast.type === 'success',
-                    'text-red-800': toast.type === 'error', 
-                    'text-blue-800': toast.type === 'info'
-                  }"
-            >{{ toast.message }}</span>
-            <button class="btn btn-sm btn-circle btn-ghost p-2 rounded-2xl" (click)="toast = null">✕</button>
-        </div>
+          'bg-green-50 border-green-200': toast.type === 'success',
+          'bg-red-50 border-red-200': toast.type === 'error',
+          'bg-purple-50 border-purple-200': toast.type === 'info'
+        }">
+        <span class="text-lg font-medium"
+          [ngClass]="{
+            'text-green-700': toast.type === 'success',
+            'text-red-700': toast.type === 'error',
+            'text-purple-700': toast.type === 'info'
+          }"
+        >{{ toast.message }}</span>
+        <button
+          [ngClass]="{
+            'bg-green-600 hover:bg-green-700': toast.type === 'success',
+            'bg-red-600 hover:bg-red-700': toast.type === 'error',
+            'bg-purple-600 hover:bg-purple-700': toast.type === 'info'
+          }"
+          class="text-white p-2 rounded-full transition-colors duration-200 ml-2"
+          (click)="toast = null"
+          aria-label="Close toast"
+        >✕</button>
+      </div>
     </div>
   `
 })

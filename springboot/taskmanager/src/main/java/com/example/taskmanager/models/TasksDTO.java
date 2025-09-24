@@ -4,13 +4,15 @@ import com.example.taskmanager.models.enums.Status;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@RequiredArgsConstructor
+@Builder(toBuilder = true)
 public class TasksDTO {
     private Long id;
     @NotBlank(message = "The title should not be blank")

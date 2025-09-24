@@ -9,10 +9,11 @@ import { TasksService } from './service/tasks';
 import { Tasks } from './models/Tasks';
 import { ToastComponent } from './components/toast/toast.component';
 import { Observable } from 'rxjs';
+import { Edittasks } from './components/edittasks/edittasks';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, Header, Addtask, Stats, Taskcard, ToastComponent],
+  imports: [CommonModule, RouterOutlet, Header, Addtask, Stats, Taskcard, ToastComponent, Edittasks],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -34,5 +35,10 @@ export class App implements OnInit {
 
   closeAddTask() {
     this.showAddTask = false;
+    this.refreshTasks();
+  }
+
+  refreshTasks() {
+    this.tasks$ = this.taskService.getTasks();
   }
 }

@@ -1,17 +1,17 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import {ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
-import { TasksService } from '../../service/tasks';
+import { Component, EventEmitter, input, Output } from '@angular/core';
 import { Tasks } from '../../models/Tasks';
 import { ToastService } from '../../service/toast';
+import { TasksService } from '../../service/tasks';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-addtask',
-  imports: [ReactiveFormsModule],
-  templateUrl: './addtask.html',
-  styleUrl: './addtask.css'
+  selector: 'app-edittasks',
+  imports: [],
+  templateUrl: './edittasks.html',
+  styleUrl: './edittasks.css'
 })
-export class Addtask {
-
+export class Edittasks {
+  task = input<Tasks>;
   @Output() close = new EventEmitter<void>();
   
   taskForm = new FormGroup({
@@ -21,12 +21,13 @@ export class Addtask {
     status: new FormControl('', [Validators.required])
   });
 
-  constructor(
-    private taskService:TasksService,
-    private toastService: ToastService
-   ) {}
 
-  addTask() {
+  constructor(
+    private taskService: TasksService,
+    private toastService: ToastService
+  ){}
+
+  editTask() {
     if (this.taskForm.valid) {
       const newTask: Tasks = {
         title: this.taskForm.value.title ?? '',
@@ -34,11 +35,11 @@ export class Addtask {
         duedate: new Date(this.taskForm.value.dueDate ?? ''),
         status: this.taskForm.value.status as "TODO" | "ONGOING" | "DONE" | "CANCELLED" | undefined
       };
-      this.taskService.createTask(newTask).subscribe(() => {
-        this.taskForm.reset();
-        this.toastService.showToast("Task added !", 3000, 'success');
-        this.close.emit();
-      });
+      // this.taskService.updateTask(this, newTask).subscribe(() => {
+      //   this.taskForm.reset();
+      //   this.toastService.showToast("Task updated !", 3000, 'success');
+      //   this.close.emit();
+      // });
       console.log(newTask);
     }
   }

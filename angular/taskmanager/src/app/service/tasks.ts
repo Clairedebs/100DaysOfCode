@@ -21,11 +21,11 @@ export class TasksService {
   // }
 
   getTaskById(id: number): Observable<Tasks> {
-    return this.http.get<Tasks>(`${this.apiurl}/${id}`);
+    return this.http.get<Tasks>(`${this.apiurl}/${id}`,{ responseType:'text' as 'json' });
   }
 
   createTask(task: Tasks): Observable<any> {
-    return this.http.post<Tasks>(this.apiurl, task);
+    return this.http.post<Tasks>(this.apiurl, task,{ responseType:'text' as 'json' });
   }
 
   updateTask(id: number, task: any): Observable<Tasks> {
@@ -33,7 +33,7 @@ export class TasksService {
   }
 
   deleteTask(id: number): Observable<any> {
-    return this.http.delete<void>(`${this.apiurl}/${id}`);
+    return this.http.delete<void>(`${this.apiurl}/${id}`,{ responseType:'text' as 'json' });
   }
 
 }

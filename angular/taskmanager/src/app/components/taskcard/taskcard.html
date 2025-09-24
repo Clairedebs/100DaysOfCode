@@ -17,7 +17,7 @@
         >{{ task().status }}</span>
     </div>
     <div class="flex justify-end gap-2 mt-4">
-        <button class="px-4 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded-full text-sm font-medium shadow">
+        <button (click)="openEditTask()" class="px-4 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded-full text-sm font-medium shadow">
             Edit
         </button>
         <button (click)="deleteTask(task().id)" class="px-4 py-1 bg-red-500 hover:bg-red-600 text-white rounded-full text-sm font-medium shadow">

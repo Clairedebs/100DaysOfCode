@@ -9,10 +9,17 @@
     }
   </div>
   @if (showAddTask) {
-    <div class="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50">
+    <div class="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50">
       <div class="w-full max-w-3xl">
         <app-addtask (close)="closeAddTask()"></app-addtask>
       </div>
     </div>
   }
+  <!-- @if(showEditTask){
+    <div class="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50">
+      <div class="w-full max-w-3xl">
+        <app-edittasks (close)="closeEditTask()"></app-edittasks>
+      </div>
+    </div>
+  } -->
 </div>

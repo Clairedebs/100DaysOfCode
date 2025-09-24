@@ -36,7 +36,6 @@ public class TaskService {
 
     public void addTask(TasksDTO tasksDTO){
         Tasks task = mapper.toEntity(tasksDTO);
-        task.setStatus(Status.TODO);
         taskRepository.save(task);
     }
 
