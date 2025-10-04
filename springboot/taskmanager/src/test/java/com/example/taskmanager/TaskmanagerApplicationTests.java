@@ -16,6 +16,9 @@ class TaskmanagerApplicationTests {
     @Autowired
     TestRestTemplate restTemplate;
 
+    @Autowired
+
+
     @Test
     void contextLoads() {
     }

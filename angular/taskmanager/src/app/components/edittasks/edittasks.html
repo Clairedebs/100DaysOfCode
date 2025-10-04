@@ -1,1 +1,43 @@
-<p>edittasks works!</p>
+@if (task) {
+<section class="bg-white p-6 rounded-xl shadow-md border border-gray-100 w-full my-4 lg:my-8 flex flex-col items-center gap-4 px-8 lg:px-20">
+    <h2 class="text-xl font-bold text-gray-600"> Edit Task </h2>
+    <form [formGroup]="edittask" (ngSubmit)="editTasks()" class="py-6 px-8 lg:px-18 mb-6 flex flex-col gap-3 border-2 border-dashed border-gray-200 rounded-lg w-full">
+        <div>
+            <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+            <input id="title" formControlName="title" class="mt-1 block p-1 w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-purple-300" />
+        </div>
+        <div>
+            <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+            <textarea id="description" formControlName="description" class="mt-1 block p-1 w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-purple-300"></textarea>
+        </div>
+        <div>
+            <label for="duedate" class="block text-sm font-medium text-gray-700">Due Date</label>
+            <input id="duedate" formControlName="dueDate" type="date" class="mt-1 block p-1 w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-purple-300" />
+        </div>
+        <div class="flex flex-row items-center w-full gap-6">
+         <div class="w-full">
+            <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
+            <select id="status" formControlName="status" class="mt-1 block p-1 w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50">
+                <option value="TODO">To do</option>
+                <option value="ONGOING">On going</option>
+                <option value="DONE">Done</option>
+            </select>
+        </div>
+        <div class="w-full">
+            <label for="priority" class="block text-sm font-medium text-gray-700">Priority</label>
+            <select id="priority" formControlName="priority" class="mt-1 block p-1 w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50">
+                <option value="HIGH">High</option>
+                <option value="MEDIUM">Medium</option>
+                <option value="LOW">Low</option>
+            </select>
+        </div>
+        </div>
+        <div class="flex flex-row w-full items-center place-items-center justify-center gap-6">
+            <button type="submit" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md">Edit Task</button>
+            <button class="mt-4 bg-red-500 text-white py-2 px-4 rounded-md" routerLink="/">Cancel</button>
+        </div>
+    </form>
+</section>
+} @else {
+    <div class="text-center text-gray-600 font-medium my-8">Loading...</div>
+}

@@ -1,11 +1,13 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { LucideAngularModule, PlusIcon } from 'lucide-angular';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [LucideAngularModule, RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
 export class Header {
-  @Output() addTask = new EventEmitter<void>();
+  readonly PlusIcon = PlusIcon;
 }

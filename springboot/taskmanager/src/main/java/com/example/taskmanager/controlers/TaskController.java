@@ -1,6 +1,5 @@
 package com.example.taskmanager.controlers;
 
-import com.example.taskmanager.models.Tasks;
 import com.example.taskmanager.models.TasksDTO;
 import com.example.taskmanager.services.TaskService;
 import jakarta.validation.Valid;

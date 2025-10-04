@@ -1,5 +1,6 @@
 package com.example.taskmanager.models;
 
+import com.example.taskmanager.models.enums.Priority;
 import com.example.taskmanager.models.enums.Status;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -22,4 +23,5 @@ public class TasksDTO {
     private Date dueDate;
     @NotBlank(message = "The blank should not be blank")
     private String status;
+    private String priority;
 }
